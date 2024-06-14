@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript insertBefore node child</title>
+</head>
+
+<body>
+    <h1>OKLABS Students</h1>
+    <ul id="myStudents">
+        <li>Avinash</li>
+        <li>Abhishek</li>
+    </ul>
+
+    <button onclick="addNewStudent('kiran')">Add New </button>
+
+    <script>
+
+        // //1. Function defination
+        // function addNewStudent(stuname) {
+        //     //function Body
+        //     //alert('ok'+stuname);// + concatination operator
+        //     var sn = prompt('Enter Student Name');
+        //     console.log(sn)
+
+        //     l = document.createElement("li");
+        //     l.innerHTML = sn;
+        //     // var tn = document.createTextNode(sn);
+        //     // console.log(tn);
+        //     // l.append(tn);
+
+        //     console.log(l);
+
+        //     var x = document.getElementById("myStudents");
+
+
+        //     // ++
+        //     // x.insertBefore(l, xchildNode[1]);
+        //     // x.insertBefore(x.childNodes[1]);
+
+        //     x.insertBefore(l, x.childNodes[1])
+
+
+        // }
+
+        // var x = document.getElementById("myStudents");
+        //x,insertBefore(l,document.querySelector('#myStudents > li:first-child'))
+        // console.log(typeof x.childNodes)
+
+        // **********************************************************************
+
+        var student = [];
+
+
+        //1. Function defination
+        function addNewStudent(stuname) {
+
+            console.log(student)
+
+            var sn = prompt('Enter Student Name');
+
+            //Immeditaly ckeck if the student is avaible in array or not
+
+            // C?T:F
+            //Condition?True:Falsee
+            var isAvailable = false;
+            var isAvailable = student.find(function (currentValue, index, arr) {
+                return (currentValue === sn) ? true : false; //Ternary Operator
+            })
+
+            if (isAvailable) {
+                // avaiable
+            }
+            else {
+                // not available
+                student.push(sn) // Add new element to an array
+
+                console.log(sn);
+
+                l = document.createElement("li");
+                l.innerHTML = sn;
+                // var tn = document.createTextNode(sn);
+                // console.log(tn);
+                // l.append(tn);
+
+                console.log(l);
+
+                var x = document.getElementById("myStudents");
+
+
+                // ++
+                // x.insertBefore(l, xchildNode[1]);
+                // x.insertBefore(x.childNodes[1]);
+
+                x.insertBefore(l, x.childNodes[1])
+            }
+
+
+
+        }
+
+        var x = document.getElementById("myStudents");
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
